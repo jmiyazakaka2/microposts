@@ -1,4 +1,9 @@
 <h1>
-    <%= gravatar_for @user %>
-    <%= @user.name %>
+  <%= gravatar_for @user %>
+  <%= @user.name %>
 </h1>
+
+<div class="panel-body">
+  <label for="user_email" class="control-label">Email:</label>
+    <%= @user.email %>(<%= link_to "edit" , edit_user_path(@user) %>)
+</div>
