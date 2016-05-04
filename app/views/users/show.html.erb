@@ -4,6 +4,13 @@
 </h1>
 
 <div class="panel-body">
-  <label for="user_email" class="control-label">Email:</label>
-    <%= @user.email %>(<%= link_to "edit" , edit_user_path(@user) %>)
+  <div class="coloumn-email">
+    <label for="user_email" class="control-label">Email:</label>
+      <%= @user.email %>
+  </div>
+  <div class="coloumn-location">
+    <label for="user_location" class="control-label">Location:</label>
+      <%= @user.location %>
+  </div>
+    <%= link_to "プロフィールの編集" , edit_user_path(@user) %>
 </div>
