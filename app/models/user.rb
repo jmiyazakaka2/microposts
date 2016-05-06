@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   validates :location, absence: true, on: :create
   validates :location, allow_blank: true, length: {minimum: 2, maximum: 20 },
                         on: :update
+  has_many :microposts
 end
