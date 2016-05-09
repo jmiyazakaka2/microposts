@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get    'edit'  , to: 'users#edit'
   patch  'update', to: 'users#update'
   put    'update', to: 'users#update'
+  get    'followings', to: 'users#followings'
+  get    'followers', to: 'users#followers'
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
