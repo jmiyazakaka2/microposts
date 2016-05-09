@@ -11,9 +11,10 @@
     <h3><%= @title %></h3>
     <% if @users.any? %>
       <% @users.each do |user| %>
-        <div class="follow">
-          <%= user.name %>
-        </div>
+          <section class="follow">
+            <%= link_to gravatar_for(user, size: 50), user %>
+            <%= user.name %>
+          </section>
       <% end %>
     <% end %>
   </div>
