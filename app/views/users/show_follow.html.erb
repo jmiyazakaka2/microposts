@@ -1,0 +1,21 @@
+<% provide(:title, @title) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section>
+      <h1>
+        <%= render 'shared/user_info' %>
+      </h1>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <h3><%= @title %></h3>
+    <% if @users.any? %>
+      <% @users.each do |user| %>
+          <section class="follow">
+            <%= link_to gravatar_for(user, size: 50), user %>
+            <%= user.name %>
+          </section>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   patch  'update', to: 'users#update'
   put    'update', to: 'users#update'
   
+  resources :users do
+    member do
+      get :followings, :followers
+    end
+  end
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts
