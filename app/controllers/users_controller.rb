@@ -38,7 +38,8 @@ class UsersController < ApplicationController
     # 自分がフォローしているユーザー
     @title = "Followings"
     @user = User.find(params[:id])
-    @users = @user.following_users
+    @users = @user.following_users.page(params[:page])
+    @user_total = @user.following_users.count
     render 'show_follow'
   end
   
@@ -46,7 +47,8 @@ class UsersController < ApplicationController
     # 自分をフォローしているユーザー
     @title = "Followers"
     @user = User.find(params[:id])
-    @users = @user.follower_users
+    @users = @user.follower_users.page(params[:page])
+    @user_total = @user.following_users.count
     render 'show_follow'
   end
   
