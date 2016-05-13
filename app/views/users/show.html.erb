@@ -13,11 +13,11 @@
         <label for="user_location" class="control-label">Location:</label>
         <%= @user.location %>
       </div>
-      <%= link_to "プロフィールの編集" , edit_user_path(@user) %>
-    </section>
-    <section>
-      <%= link_to "followings" , followings_user_path %>
-      <%= link_to "followers" , followers_user_path %>
+      <% if logged_in? %>
+        <%= link_to "プロフィールの編集" , edit_user_path(@user) %>
+      <% else %>
+        <%= link_to "Log in" , login_path %>
+      <% end %>
     </section>
   </aside>
   <div class="col-md-8">
